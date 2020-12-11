@@ -25,6 +25,10 @@ void resizeall(int n){
 }
 void kahntoposort(int n){
     queue<int> q;
+<<<<<<< HEAD
+=======
+    vector<int> kahnsort;
+>>>>>>> a80b8cec7f0c71de5ae06d732ca3b9320d3c9d69
     for(int i=0;i<n;i++){
         if(inDeg[i]==0){
             q.push(i);
@@ -32,7 +36,11 @@ void kahntoposort(int n){
     }
 
     while(q.size()>0){
+<<<<<<< HEAD
         cout<<q.front()<<" ";
+=======
+        kahnsort.push_back(q.front());
+>>>>>>> a80b8cec7f0c71de5ae06d732ca3b9320d3c9d69
         for(auto x : g[q.front()]){
             inDeg[x]--;
             if(inDeg[x]==0){
@@ -41,6 +49,20 @@ void kahntoposort(int n){
         }
         q.pop();
     }
+<<<<<<< HEAD
+=======
+    int flag = 0;
+    for(int i=0;i<n;i++){
+        if(inDeg[i])flag = 1;
+
+    }
+    if(flag)cout<<"Contains cycle\n";
+    else {
+        cout<<"Output - ";
+        print(kahnsort);
+    }
+
+>>>>>>> a80b8cec7f0c71de5ae06d732ca3b9320d3c9d69
 
 }
 
